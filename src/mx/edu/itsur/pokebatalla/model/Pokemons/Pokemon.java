@@ -1,11 +1,14 @@
 package mx.edu.itsur.pokebatalla.model.Pokemons;
+
 import java.util.List;
 import mx.edu.itsur.pokebatalla.moves.Movimiento;
+
 /**
- Sra. Evelyn
+ * Sra. Evelyn
  */
-public class Pokemon {
-        protected String tipo;
+public abstract class Pokemon {
+
+    protected String tipo;
     protected String nombre;
     protected int nivel;
     protected int hp;
@@ -21,29 +24,37 @@ public class Pokemon {
     public int getNivel() {
         return nivel;
     }
+
     public int getAtaque() {
         return ataque;
-    }    
-    public int getDefensa(){
+    }
+
+    public int getDefensa() {
         return defensa;
     }
-    
+     public int gethp() {
+        return hp;
+    }
+
+
     //Setters
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     //Métodos 
-    public void recibirDanio(int danio){
+    public void recibirDanio(int danio) {
         this.hp = this.hp - danio;
-    }        
+    }
 
+    public abstract Enum[] getMovimientos();
+
+    public abstract void atacar(Pokemon oponente, int ordinalMovimiento);
 
     @Override
     public String toString() {
 
-        return this.getClass().getSimpleName() + 
-                "{tipo:" + tipo + " hp:" + hp + "}";
+        return this.getClass().getSimpleName()
+                + "{tipo:" + tipo + " hp:" + hp + "}";
     }
-
 }

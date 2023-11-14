@@ -37,9 +37,22 @@ public class Dratini extends Pokemon{
        this();
        this.nombre = nombre;
    }
-       public void atacar(Pokemon oponente, Dratini.Movimientos movimientoAUtilizar) {
+      @Override
+    public Enum[]getMovimientos()
+    {
+       return Dratini.Movimientos.values();
+    }
+    
+     @Override
+     public void atacar(Pokemon oponente, int ordinalMovimiento) {
         //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+        Movimiento instanciaMovimiento;   
+        Dratini.Movimientos movimientoAUtilizar = Dratini.Movimientos.values()[ordinalMovimiento];
+        if(this.hp<=0)
+        {
+            System.out.println("DRATINI SE ESTA DEAD");
+            return;
+        }
         switch (movimientoAUtilizar) {
             case FURIADRAGON:
                 instanciaMovimiento = new FuriaDragon();

@@ -8,11 +8,8 @@ Sra. Evelyn
  */
 public class Pikachu  extends Pokemon
 {
-     public enum Movimientos {
+public enum Movimientos {
         IMPACTRUENO,
-        ATAQUE_RAPIDO,
-        LATIGO
-
         //Otros movimientos...
     }
 
@@ -32,21 +29,24 @@ public class Pikachu  extends Pokemon
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, Pikachu.Movimientos movimientoAUtilizar) {
+    @Override
+    public Enum[] getMovimientos() {
+        return Pikachu.Movimientos.values();
+    }
 
-        //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+
+        Movimiento instanciaMovimiento;
+        Pikachu.Movimientos movimientoAUtilizar = Pikachu.Movimientos.values()[ordinalMovimiento];
+        if (this.hp <= 0) {
+                System.out.println("Pikachu esta casado y no puede realizar mas movimientos.");
+                return;
+            }
         switch (movimientoAUtilizar) {
             case IMPACTRUENO:
                 instanciaMovimiento = new Impactrueno();
                 break;
-            case ATAQUE_RAPIDO:
-                instanciaMovimiento = new AtaqueRapido();
-                break;
-            case LATIGO:
-                instanciaMovimiento = new Latigo();
-                break;
-
             //Otros movimientos aquí...                
             default:
                 throw new AssertionError();
@@ -55,4 +55,5 @@ public class Pikachu  extends Pokemon
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
     }
+
 }

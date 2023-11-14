@@ -35,10 +35,15 @@ public class Aerodactyl extends Pokemon {
        this();
        this.nombre = nombre;
    }
-   public void atacar(Pokemon oponente, Aerodactyl.Movimientos movimientoAUtilizar) {
-
-        //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+   @Override
+    public Enum[] getMovimientos() {
+        return Dratini.Movimientos.values();
+    }
+    
+    @Override
+     public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        Movimiento instanciaMovimiento;
+        Aerodactyl.Movimientos movimientoAUtilizar = Aerodactyl.Movimientos.values()[ordinalMovimiento];  
         switch (movimientoAUtilizar) {
             case ATAQUEARENA:
                 instanciaMovimiento = new AtaqueArena();

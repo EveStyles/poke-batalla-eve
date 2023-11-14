@@ -1,13 +1,14 @@
 package mx.edu.itsur.pokebatalla.model.Pokemons;
-
 import java.util.ArrayList;
-
+import mx.edu.itsur.pokebatalla.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.moves.Movimiento;
 /**
- Sra. Evelyn
+ * Sra. Evelyn
  */
 public class Charmander extends Pokemon {
-    public Charmander(){
-        
+
+    public Charmander() {
+
         this.tipo = "FUEGO";
         this.hp = 39;
         this.ataque = 52;
@@ -18,20 +19,35 @@ public class Charmander extends Pokemon {
         //this.habilidades.add("ARAÑAZO");
         //this.habilidades.add("GRUÑIDO");
     }
-    public Charmander(String nombre){
-        this(); 
+      public enum Movimientos {
+      ATAQUERAPIDO
+    }
+    public Charmander(String nombre) {
+        this();
         this.nombre = nombre;
     }
-     public void atacar(Pokemon oponente, String habilidad)
-    {
-        if(habilidad.equals("ARAÑAZO"))
-        {
-            System.out.println("REALIZANDO EL ATAQUE DE ARAÑAZO");
-        }
-        else if(habilidad.equals("GRUÑIDO"))
-                {
-                    System.out.println("REALIZANDO EL ATAQUE DE GRUÑIDO");
-                }
+    
+    @Override
+    public Enum[] getMovimientos() {
+        return Dratini.Movimientos.values();
     }
     
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        Movimiento instanciaMovimiento;
+        Charmander.Movimientos movimientoAUtilizar = Charmander.Movimientos.values()[ordinalMovimiento];
+        if (this.hp <= 0) {
+            System.out.println("CHARMANDER SE ESTA DEAD");
+            return;
+        }
+        switch (movimientoAUtilizar) {
+            case ATAQUERAPIDO:
+                instanciaMovimiento = new AtaqueRapido();
+                break;
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
+        }
+        instanciaMovimiento.utilizar(this, oponente);
+    }
 }

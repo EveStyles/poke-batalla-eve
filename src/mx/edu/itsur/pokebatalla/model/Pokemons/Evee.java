@@ -8,7 +8,7 @@ import mx.edu.itsur.pokebatalla.moves.Movimiento;
  Sra. Evelyn
  * s22120162
  */
-public class Evee extends Pokemon{
+public  class Evee extends Pokemon{
    public enum Movimientos {
       BESOAMOROSO,
       BOMBAHUEVO,
@@ -31,10 +31,22 @@ public class Evee extends Pokemon{
         this();
         this.nombre = nombre;
     }
-     public void atacar(Pokemon oponente, Evee.Movimientos movimientoAUtilizar) {
-
-       
-        Movimiento instanciaMovimiento;        
+    @Override
+    public Enum[]getMovimientos()
+    {
+       return Evee.Movimientos.values();
+    }
+    @Override
+     public void atacar(Pokemon oponente, int ordinalMovimiento) {
+           
+  
+        Movimiento instanciaMovimiento;       
+        Evee.Movimientos movimientoAUtilizar=Evee.Movimientos.values()[ordinalMovimiento];
+        if(this.hp<=0)
+        {
+            System.out.println("EVEE SE ESTA DEAD");
+            return;
+        }
         switch (movimientoAUtilizar) {
             case BESOAMOROSO:
                 instanciaMovimiento = new BesoAmoroso();
