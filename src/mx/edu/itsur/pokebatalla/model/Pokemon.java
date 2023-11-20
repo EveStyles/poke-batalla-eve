@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package mx.edu.itsur.pokebatalla.model;
-
 import java.util.List;
-
 /**
- *
- * @author FJML1983
+ Sra. Evelyn
  */
 public class Pokemon {
-
     //Atributos
     protected String tipo;
     protected String nombre;
@@ -24,15 +16,12 @@ public class Pokemon {
 
     Pokemon() {
     }
-
     //Setters
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     //Métodos
     public void atacar(Pokemon oponente) {
-        
         System.out.println("Mi pokemon:" + this.nombre);
         System.out.println("esta atacando a: " + oponente);
         
@@ -46,12 +35,6 @@ public class Pokemon {
            //TODO: ...Y si no que pasa?
         }
         System.out.println("El pokemon oponente quedo asi:" + oponente);
-
-        
-        
-        //System.out.println("Pokemon Atacando a un: " + enemigo.getClass().getName());
-        //TODO: Aqui va la logica para causar daño al enemigo.
-
     }
 
     @Override
