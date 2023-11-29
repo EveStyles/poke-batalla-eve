@@ -64,7 +64,14 @@ public class Movimiento {
                          this.getClass().getSimpleName() + " a " +  
                          objetivo.getClass().getSimpleName() + " y causa danio de " +
                          danio);
-        System.out.println("El objetivo quedo asi: " + objetivo);
+        if(objetivo.gethp()<=0)
+        {
+        System.out.println("El objetivo quedo asi: " + "0");
+        }
+        else{
+       System.out.println("El objetivo quedo asi: " + objetivo);
+        }
+        
         
     }    
     

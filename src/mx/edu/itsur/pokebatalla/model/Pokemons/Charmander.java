@@ -30,7 +30,7 @@ public class Charmander extends Pokemon implements Serializable{
     
     @Override
     public Enum[] getMovimientos() {
-        return Dratini.Movimientos.values();
+        return Charmander.Movimientos.values();
     }
     
     @Override

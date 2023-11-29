@@ -40,9 +40,9 @@ public class Batalla implements Serializable {
             try {
                 eligirPokemon(entrenador1);
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Solamente cuentas con "
+                System.out.println("SOLAMENTE CUENTAS CON: "
                         + entrenador1.getPokemonsCapturados().size()
-                        + " Elige alguno de ellos!!! ");
+                        + " ¡ELEGI ALGUNOS DE ELLOS! ");
                 entrenador1.setPokemonActual(null);
             }
         } while (entrenador1.getPokemonActual() == null);
@@ -51,9 +51,9 @@ public class Batalla implements Serializable {
             try {
                 eligirPokemon(entrenador2);
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Solamente cuentas con "
+                System.out.println("SOLAMENTE CUENTAS CON: "
                         + entrenador2.getPokemonsCapturados().size()
-                        + " Elige alguno de ellos!!! ");
+                        + "  ¡ELEGI ALGUNOS DE ELLOS! ");
                 entrenador2.setPokemonActual(null);
             }
         } while (entrenador2.getPokemonActual() == null);
@@ -62,10 +62,10 @@ public class Batalla implements Serializable {
             Entrenador entrenadorEnTurno = (turno == 1) ? entrenador1 : entrenador2;
             Entrenador oponente = (turno == 1) ? entrenador2 : entrenador1;
 
-            System.out.println("Turno del entrenador: " + entrenadorEnTurno.getNombre());
+            System.out.println("TURNO DEL ENTRENADOR: " + entrenadorEnTurno.getNombre());
 
             if (oponente.getPokemonActual() == null) {
-                System.out.println("No hay un Pokémon actualmente seleccionado para el oponente");
+                System.out.println("NO HAY POKEMON SELECCIONADO...");
                 return;
             }
             seleccionarAtaque(entrenadorEnTurno, oponente.getPokemonActual());

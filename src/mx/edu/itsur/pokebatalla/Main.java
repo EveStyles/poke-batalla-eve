@@ -27,17 +27,17 @@ public class Main implements Serializable{
             //PIKACHUSALVAJE
             pikachuSalvaje.setNombre("PIKA");
             //EVEE
-            Evee PokemonEve1 = new Evee("Eve");
+            Evee PokemonEve1 = new Evee("EVE");
 
             //AERODACTYL
-            Aerodactyl PokemonAero1 = new Aerodactyl("Aero");
+            Aerodactyl PokemonAero1 = new Aerodactyl("AERO");
 
             //DRATINI
             Dratini PokemonDra1 = new Dratini("DRA");
             //CHARMANDER
-            Charmander PokemonChar1 = new Charmander("Char");
+            Charmander PokemonChar1 = new Charmander("CHAR");
 
-            Entrenador n1 = new Entrenador("harry");
+            Entrenador n1 = new Entrenador("HARRY");
             n1.capturarPokemon(PokemonDra1);
             n1.capturarPokemon(PokemonChar1);
             Entrenador n2 = new Entrenador("SAMUEL");
