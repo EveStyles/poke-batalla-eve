@@ -1,5 +1,6 @@
 package mx.edu.itsur.pokebatalla.model.Pokemons;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import mx.edu.itsur.pokebatalla.moves.BesoAmoroso;
 import mx.edu.itsur.pokebatalla.moves.BombaHuevo;
@@ -14,7 +15,7 @@ import mx.edu.itsur.pokebatalla.moves.Movimiento;
  * s22120162
  */
 
-public class Dratini extends Pokemon{
+public class Dratini extends Pokemon implements Serializable{
      public enum Movimientos {
       FURIADRAGON,
       COLADRAGON,

@@ -1,11 +1,12 @@
 package mx.edu.itsur.pokebatalla.model.Pokemons;
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.moves.Movimiento;
 
 /**
  Sra. Evelyn
  */
-public class Bullbasaur extends Pokemon {
+public class Bullbasaur extends Pokemon implements Serializable {
 
     public enum Movimientos {
     ATAQUERAPIDO

@@ -1,11 +1,12 @@
 package mx.edu.itsur.pokebatalla.model.battles;
+import java.io.Serializable;
 import java.util.List;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
 import java.util.ArrayList;
 /**
  * Sra. Evelyn
  */
-public class Entrenador {
+public class Entrenador implements Serializable {
     //Atributos
 
     protected List<Pokemon> pokemonsCapturados;

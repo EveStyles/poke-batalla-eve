@@ -1,52 +1,53 @@
 package mx.edu.itsur.pokebatalla;
 
-import mx.edu.itsur.pokebatalla.model.Bullbasaur;
-import mx.edu.itsur.pokebatalla.model.Pikachu;
-import mx.edu.itsur.pokebatalla.model.Charmander;
-import mx.edu.itsur.pokebatalla.model.Evee;
-import mx.edu.itsur.pokebatalla.model.Aerodactyl;
-import mx.edu.itsur.pokebatalla.model.Dratini;
+import java.io.Serializable;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Aerodactyl;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Charmander;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Dratini;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Evee;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Pikachu;
+import mx.edu.itsur.pokebatalla.model.battles.Batalla;
+import mx.edu.itsur.pokebatalla.model.battles.Entrenador;
+import mx.edu.itsur.pokebatalla.model.ControladorArchivos.FileManajer;
+
 /**
-Sra. Evelyn
+ * Sra. Evelyn
  */
-public class Main {
+public class Main implements Serializable{
 
     public static void main(String[] args) {
         System.out.println("¡BIENVENIDO A LA POKEBATALLA!");
-      
-        Pikachu pikachuSalvaje = new Pikachu();
-        Charmander charmanderSalvaje = new Charmander() ;
-       
-        
-        //PIKACHUSALVAJE
-        pikachuSalvaje.setNombre("PIKA");        
-        Pikachu miPikachu = pikachuSalvaje;
-        miPikachu.atacar(charmanderSalvaje);
-        miPikachu.atacar(charmanderSalvaje, "ATACKTRUENO");
-        
-        //EVEE
-        Evee PokemonEve1 = new Evee("Eve");
-        
-        Evee  miEvee = PokemonEve1;
-        PokemonEve1.atacar(pikachuSalvaje, "RAPIDEZ");
-        
 
-        
-        //AERODACTYL
-        Aerodactyl PokemonAero1 = new Aerodactyl("Aero");
-        Aerodactyl miAero = PokemonAero1;
-        PokemonAero1.atacar(PokemonEve1,"MALICIOSO");
-        
-        //DRATINI
-        Dratini PokemonDra1 = new   Dratini("DRA");
-        Dratini miDra = PokemonDra1;
-        PokemonDra1.atacar(PokemonAero1,"CONTRICCION");
-        
-        //CHARMANDER
-        Charmander PokemonChar1 = new Charmander("Char");
-        Charmander miChar = PokemonChar1;
-        PokemonChar1.atacar(PokemonDra1,"ARAÑAZO");
-        
+        Batalla v = FileManajer.leerPartida();
+
+        if (v == null) {
+            Pikachu pikachuSalvaje = new Pikachu();
+            Charmander charmanderSalvaje = new Charmander();
+
+            //PIKACHUSALVAJE
+            pikachuSalvaje.setNombre("PIKA");
+            //EVEE
+            Evee PokemonEve1 = new Evee("Eve");
+
+            //AERODACTYL
+            Aerodactyl PokemonAero1 = new Aerodactyl("Aero");
+
+            //DRATINI
+            Dratini PokemonDra1 = new Dratini("DRA");
+            //CHARMANDER
+            Charmander PokemonChar1 = new Charmander("Char");
+
+            Entrenador n1 = new Entrenador("harry");
+            n1.capturarPokemon(PokemonDra1);
+            n1.capturarPokemon(PokemonChar1);
+            Entrenador n2 = new Entrenador("SAMUEL");
+            n2.capturarPokemon(PokemonEve1);
+            n2.capturarPokemon(PokemonAero1);
+
+            v = new Batalla(n1, n2);
+        }
+        v.desarrollarBatalla();
+
     }
-    
+
 }

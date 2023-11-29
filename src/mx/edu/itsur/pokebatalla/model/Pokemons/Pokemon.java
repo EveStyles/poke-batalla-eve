@@ -1,12 +1,13 @@
 package mx.edu.itsur.pokebatalla.model.Pokemons;
 
+import java.io.Serializable;
 import java.util.List;
 import mx.edu.itsur.pokebatalla.moves.Movimiento;
 
 /**
  * Sra. Evelyn
  */
-public abstract class Pokemon {
+public abstract class Pokemon implements Serializable{
 
     protected String tipo;
     protected String nombre;

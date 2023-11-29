@@ -1,5 +1,6 @@
 package mx.edu.itsur.pokebatalla.model.Pokemons;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import mx.edu.itsur.pokebatalla.moves.AtaqueArena;
 import mx.edu.itsur.pokebatalla.moves.AtaqueRapido;
@@ -14,7 +15,7 @@ import mx.edu.itsur.pokebatalla.moves.Movimiento;
  * s22120162
  */
 
-public class Aerodactyl extends Pokemon {
+public class Aerodactyl extends Pokemon implements Serializable {
     public enum Movimientos {
     ATAQUEARENA,
     ATAQUERAPIDO,

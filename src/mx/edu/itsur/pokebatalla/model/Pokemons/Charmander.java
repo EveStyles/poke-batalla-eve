@@ -1,11 +1,12 @@
 package mx.edu.itsur.pokebatalla.model.Pokemons;
+import java.io.Serializable;
 import java.util.ArrayList;
 import mx.edu.itsur.pokebatalla.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.moves.Movimiento;
 /**
  * Sra. Evelyn
  */
-public class Charmander extends Pokemon {
+public class Charmander extends Pokemon implements Serializable{
 
     public Charmander() {
 

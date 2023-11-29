@@ -1,14 +1,15 @@
 package mx.edu.itsur.pokebatalla.model.Pokemons;
+import java.io.Serializable;
 import java.util.ArrayList;
 import mx.edu.itsur.pokebatalla.moves.BesoAmoroso;
 import mx.edu.itsur.pokebatalla.moves.BombaHuevo;
 import mx.edu.itsur.pokebatalla.moves.BombaSonica;
 import mx.edu.itsur.pokebatalla.moves.Movimiento;
 /**
- Sra. Evelyn
- * s22120162
+ Sra. Evelyn s22120162
+ * 
  */
-public  class Evee extends Pokemon{
+public  class Evee extends Pokemon implements Serializable{
    public enum Movimientos {
       BESOAMOROSO,
       BOMBAHUEVO,
@@ -22,9 +23,6 @@ public  class Evee extends Pokemon{
                 this.hp = 55;
                 this.nivel = 1;
                 this.precision = 4;
-               // this.habilidades  = new ArrayList<>();
-                //this.habilidades.add("RAPIDEZ");
-                //this.habilidades.add("METRONOMO");
             }
     public Evee(String nombre)
     {
@@ -56,9 +54,7 @@ public  class Evee extends Pokemon{
                 break;
             case BOMBASONICA:
                 instanciaMovimiento = new BombaSonica();
-                break;
-
-            //Otros movimientos aquí...                
+                break;      
             default:
                 throw new AssertionError();
         }

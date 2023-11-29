@@ -4,10 +4,12 @@
  */
 package mx.edu.itsur.pokebatalla.model.Pokemons;
 
+import java.io.Serializable;
+
 /**
  *
  * @author LMC Alumno
  */
-public abstract class Pysduck extends Pokemon {
+public abstract class Pysduck extends Pokemon implements Serializable{
     public abstract void Atacar();
 }
